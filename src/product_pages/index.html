@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="module">
+      import ProductData from '../js/ProductData.mjs';
+      import ProductDetails from '../js/ProductDetails.mjs';
+      import { getParam } from '../js/utils.mjs';
+
+      const productId = getParam('product'); // Obtener el ID del producto de la URL
+      const dataSource = new ProductData('tents'); // Crear instancia de ProductData
+
+      const product = new ProductDetails(productId, dataSource); // Crear instancia de ProductDetails
+      product.init(); // Inicializar
+    </script>
+  </head>
+  <body>
+    <header class="divider">
+      <div class="logo">
+        <img src="/images/noun_Tent_2517.svg" alt="tent image for logo">
+        <a href="../index.html"> Sleep<span class="highlight">Outside</span></a>
+      </div>
+    </header>
+    <main class="divider">
+      <!-- Aquí se insertarán dinámicamente los detalles del producto -->
+    </main>
+    <footer>&copy; NOT a real business</footer>
+  </body>
+</html>
