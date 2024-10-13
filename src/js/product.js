@@ -23,12 +23,12 @@ function addProductToCart(product) {
 async function addToCartHandler(e) {
   const productId = e.target.dataset.id;
   const product = await dataSource.findProductById(productId);
-  
+
   const productData = {
     Name: product.Name,
     Image: product.Image,
     Colors: product.Colors,
-    FinalPrice: product.FinalPrice
+    FinalPrice: product.FinalPrice,
   };
 
   addProductToCart(productData);
@@ -40,7 +40,7 @@ async function loadProducts() {
   const products = await dataSource.getData();
 
   // Generar la lista de productos
-  productList.innerHTML = products.map(productTemplate).join('');
+  productList.innerHTML = products.map(productTemplate).join("");
 }
 
 // Template para cada producto
